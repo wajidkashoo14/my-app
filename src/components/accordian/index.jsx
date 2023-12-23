@@ -14,7 +14,6 @@ export default function Accordian() {
   function handleMultipleSlection(currentId) {
     let copyMultiple = [...multipleSelected];
     const findIndexOfCurrentId = copyMultiple.indexOf(currentId);
-    console.log(findIndexOfCurrentId)
     if (findIndexOfCurrentId === -1) copyMultiple.push(currentId);
     else copyMultiple.splice(findIndexOfCurrentId, 1);
     setMultipleSelected(copyMultiple);
@@ -40,7 +39,7 @@ export default function Accordian() {
                   <h3>{dataItem.question}</h3>
                   <span>+</span>
                 </div>
-                {selected === dataItem.id || multipleSelected.indexOf(dataItem.id) === -1 ?  (
+                {selected === dataItem.id || multipleSelected.indexOf(dataItem.id) !== -1 ?  (
                   <div className="content">{dataItem.answer}</div>
                 ) : null}
               </div>
