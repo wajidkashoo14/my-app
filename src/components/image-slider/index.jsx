@@ -34,7 +34,7 @@ function ImageSlider({ url, limit = 5, page = 1 }) {
 
   useEffect(() => {
     if (url !== "") fetchImages(url);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   if (loading) {
@@ -46,47 +46,49 @@ function ImageSlider({ url, limit = 5, page = 1 }) {
   }
 
   return (
-    <div className="container">
-      <BsArrowLeftCircleFill
-        onClick={handlePrevious}
-        className="arrow arrow-left"
-      />
-      {images && images.length > 0
-        ? images.map((image, index) => {
-            return (
-              <img
-                key={image.id}
-                src={image.download_url}
-                alt="nature"
-                className={
-                  currentSlide === index
-                    ? "current-image"
-                    : "current-image hide-current-image"
-                }
-              />
-            );
-          })
-        : null}
-      <BsArrowRightCircleFill
-        onClick={handleNext}
-        className="arrow arrow-right"
-      />
-      <span className="circle-indicators">
+    <section className="section">
+      <div className="container">
+        <BsArrowLeftCircleFill
+          onClick={handlePrevious}
+          className="arrow arrow-left"
+        />
         {images && images.length > 0
-          ? images.map((_, index) => (
-              <button
-                key={index}
-                className={
-                  currentSlide === index
-                    ? "current-indicator"
-                    : "current-indicator inactive-indicator"
-                }
-                onClick={() => setCurrentSlide(index)}
-              ></button>
-            ))
+          ? images.map((image, index) => {
+              return (
+                <img
+                  key={image.id}
+                  src={image.download_url}
+                  alt="nature"
+                  className={
+                    currentSlide === index
+                      ? "current-image"
+                      : "current-image hide-current-image"
+                  }
+                />
+              );
+            })
           : null}
-      </span>
-    </div>
+        <BsArrowRightCircleFill
+          onClick={handleNext}
+          className="arrow arrow-right"
+        />
+        <span className="circle-indicators">
+          {images && images.length > 0
+            ? images.map((_, index) => (
+                <button
+                  key={index}
+                  className={
+                    currentSlide === index
+                      ? "current-indicator"
+                      : "current-indicator inactive-indicator"
+                  }
+                  onClick={() => setCurrentSlide(index)}
+                ></button>
+              ))
+            : null}
+        </span>
+      </div>
+    </section>
   );
 }
 
