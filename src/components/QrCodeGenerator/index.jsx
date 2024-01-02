@@ -8,6 +8,7 @@ export default function QrCodeGenerator() {
 
  function handleGenerateQrCode() {
     setQrCode(input)
+    setInput('')
 
   }
   return (
