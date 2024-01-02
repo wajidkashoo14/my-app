@@ -1,4 +1,5 @@
 import './App.css';
+import QrCodeGenerator from './components/QrCodeGenerator';
 // import LoadMore from './components/LoadMore';
 import TreeView from './components/treeView';
 import menus from './components/treeView/data';
@@ -15,7 +16,8 @@ function App() {
       {/* <StarRating /> */}
       {/* <ImageSlider url={"https://picsum.photos/v2/list"} limit={'10'} /> */}
       {/* <LoadMore /> */}
-      <TreeView menus={menus} />
+      {/* <TreeView menus={menus} /> */}
+      <QrCodeGenerator />
     </div>
   );
 }
