@@ -1,5 +1,7 @@
 import './App.css';
-import LoadMore from './components/LoadMore';
+// import LoadMore from './components/LoadMore';
+import TreeView from './components/treeView';
+import menus from './components/treeView/data';
 // import ImageSlider from './components/image-slider';
 // import StarRating from './components/starSelection';
 // import Accordian from './components/accordian';
@@ -12,7 +14,8 @@ function App() {
       {/* <RandomColor /> */}
       {/* <StarRating /> */}
       {/* <ImageSlider url={"https://picsum.photos/v2/list"} limit={'10'} /> */}
-      <LoadMore />
+      {/* <LoadMore /> */}
+      <TreeView menus={menus} />
     </div>
   );
 }
